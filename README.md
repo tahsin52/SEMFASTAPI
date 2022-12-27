@@ -3,6 +3,8 @@ git clone
 source venv/bin/activate or virtualenv venv
 pip install requirements.txt
 
+add new database in postgresql and path to it in database.py
+
 uvicorn main:app --reload
 ```
 

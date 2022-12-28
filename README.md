@@ -9,9 +9,9 @@ uvicorn main:app --reload
 ```
 
 ``` bash
-    GET /datas - Get all datas and write to json file
+    GET /datas - Get all datas and write to json file (2 min)
     GET /cars/ - Get all cars in db
-    GET /car/ - Get all cars multiple filters (car/?make=Toyota&model=Corolla&year=2022)
+    GET /car/ - Get all cars multiple filters (car/?make=Toyota&model=Corolla&year=2022&transmission=Automatic)
     POST /create/car/ - Create all cars
 
 ```

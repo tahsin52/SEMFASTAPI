@@ -2,7 +2,7 @@ from typing import Dict
 import json as _json
 
 
-def get_all_data() -> Dict:
+def get_all_data_services() -> Dict:
     """Get all the data"""
     with open('data.json', encoding='utf-8') as f:
         data = _json.load(f)

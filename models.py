@@ -21,6 +21,7 @@ class Car(Base):
     vin = Column(String)
     year = Column(String)
     exterior_color = Column(String, nullable=True)
+    transmission = Column(String, nullable=True)
 
     def __repr__(self):
         return f'{self.year} {self.make} {self.model} {self.exterior_color}'

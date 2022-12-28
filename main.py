@@ -12,8 +12,8 @@ session = Session(bind=engine)
 
 @app.get("/datas")
 async def get_datas():
-    write_json()
-    return services.get_all_data()
+    await write_json()
+    return services.get_all_data_services()
 
 
 @app.get("/cars/")
@@ -38,13 +38,14 @@ async def multiple_query_by_car(request: Request):
             'year': car.year,
             'price': car.price,
             'exterior_color': car.exterior_color,
+            'transmission': car.transmission,
         }
         list_cars.append(a)
 
     return list_cars
 
 
-@app.post("/create/car/")
+@app.post("/create/car/", status_code=201)
 async def create_car():
     for data in services.get_list_data():
         car = models.Car(
@@ -65,6 +66,7 @@ async def create_car():
             vin=data['vin'],
             year=data['year'],
             exterior_color=data['exterior_color'],
+            transmission=data['transmission']
         )
         session.add(car)
         session.commit()

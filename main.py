@@ -10,7 +10,7 @@ app = FastAPI()
 session = Session(bind=engine)
 
 
-@app.get("/datas")
+@app.get("/datas/", status_code=200)
 async def get_datas():
     await write_json()
     return services.get_all_data_services()

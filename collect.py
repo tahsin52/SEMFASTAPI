@@ -19,7 +19,10 @@ async def write_json():
         url = f'https://www.cars.com/vehicledetail/' + event['listing_id'] + '/'
         soup = scraper._get_page(url)
         transmission = soup.find_all('dd')[5].text
-        event['transmission'] = transmission
+        try:
+            event['transmission'] = transmission
+        except IndexError:
+            continue
         with open(f'data.json', 'w', encoding='utf-8') as f:
             _json.dump(events, f, indent=4, ensure_ascii=False)
 

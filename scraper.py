@@ -37,19 +37,6 @@ def _get_page(url: str) -> BeautifulSoup:
     soup = BeautifulSoup(page.content, 'html.parser')
     return soup
 
-# def get_Transmission():
-#     """Get the Transmission"""
-#     data_list = []
-#     for data in get_all_data():
-#         transmissions = data['listing_id']
-#         url = f'https://www.cars.com/vehicledetail/{transmissions}/'
-#         soup = _get_page(url)
-#         transmission = soup.find_all('dd')[5].text
-#
-#         data_list.append({'listing_id': transmissions, 'transmission': transmission})
-#         session.commit()
-#     return data_list
-
 
 def get_all_data() -> List:
     """Get all the data"""
